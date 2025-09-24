@@ -16,6 +16,10 @@ spl_autoload_register(function ($className) use ($directories) {
     }
 });
 
+spl_autoload_register(function($class){
+    require_once $class . 'php';
+});
+
 //create an instance of HelloWorld
 $ObjSendMail = new SendMail();
 $form = new forms();
